@@ -1,0 +1,9 @@
+﻿  MsgServer.cpp
+  XmlElement.cpp
+  XmlDocument.cpp
+  Sockets.cpp
+  Logger.cpp
+  Cpp11-BlockingQueue.cpp
+  Generating Code...
+  MsgServer.vcxproj -> C:\Users\Ringo\Documents\Visual Studio 2017\Projects\Oodp4\Oodp4\Debug\MsgServer.exe
+  MsgServer.vcxproj -> C:\Users\Ringo\Documents\Visual Studio 2017\Projects\Oodp4\Oodp4\Debug\MsgServer.pdb (Partial PDB)

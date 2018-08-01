@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{5DD1DBDE-C6BD-48E0-9CF2-81E9E87004E3}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>MsgServer</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Cpp11-BlockingQueue\Cpp11-BlockingQueue.h" />
+    <ClInclude Include="..\Logger\Logger.h" />
+    <ClInclude Include="..\MsgClient\Sockets.h" />
+    <ClInclude Include="..\XmlDocument\XmlDocument.h" />
+    <ClInclude Include="..\XmlDocument\XmlElement.h" />
+    <ClInclude Include="MsgServer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Cpp11-BlockingQueue\Cpp11-BlockingQueue.cpp" />
+    <ClCompile Include="..\Logger\Logger.cpp" />
+    <ClCompile Include="..\MsgClient\Sockets.cpp" />
+    <ClCompile Include="..\XmlDocument\XmlDocument.cpp" />
+    <ClCompile Include="..\XmlDocument\XmlElement.cpp" />
+    <ClCompile Include="MsgServer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AbstractSyntaxTree\AbstractSyntaxTree.vcxproj">
+      <Project>{db677ffe-6721-42b9-a34b-312c77c413f9}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Convert\Convert.vcxproj">
+      <Project>{155d834f-5c31-4d72-b995-209a35bd6442}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Cpp11-BlockingQueue\Cpp11-BlockingQueue.vcxproj">
+      <Project>{410f0db7-0334-41c5-9e7a-a80c96191ba8}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\DependencyAnalysis\DependencyAnalysis.vcxproj">
+      <Project>{4a7e7680-8415-4e70-a303-454524b5680f}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\FileMgr\FileMgr.vcxproj">
+      <Project>{7c2bd027-1ae5-46a6-bdad-b89a3628e254}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\GrammarHelpers\GrammarHelpers.vcxproj">
+      <Project>{c529018a-3d77-40e2-b4c1-0342ee074af5}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\HttpMessage\HttpMessage.vcxproj">
+      <Project>{37228c67-76b8-4b68-abb9-e9b9bb784b40}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Logger\Logger.vcxproj">
+      <Project>{be6b2c6c-f926-49d0-91ec-287820660cb7}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\MockChannel\MockChannel.vcxproj">
+      <Project>{0adf608b-871c-4368-a24e-2aaf753645a8}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\MsgClient\MsgClient.vcxproj">
+      <Project>{63d29ff8-8d95-48d2-aed9-08dc4afb5814}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\NoSqlDb\NoSqlDb.vcxproj">
+      <Project>{a38fa61f-2aad-4b21-b216-376819627a0d}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Oodp4\Oodp4.vcxproj">
+      <Project>{38129432-5092-4b93-9fdd-ae0987b8703b}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Parser\Parser.vcxproj">
+      <Project>{35c72914-361d-4521-934f-5060a8adfc5c}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Publisher\Publisher.vcxproj">
+      <Project>{888bc839-e60b-46ed-8232-80d10b080c0f}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\ScopeStack\ScopeStack.vcxproj">
+      <Project>{6c39a933-ba9d-4b37-bba2-89a2149d686c}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\SemiExp\SemiExp.vcxproj">
+      <Project>{353fddc6-2e39-464c-9999-cb431164dcc3}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\ServerExecutive\ServerExecutive.vcxproj">
+      <Project>{e56caaf5-961c-4c7e-8512-ca0a553ef6de}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\StrongComponent\StrongComponent.vcxproj">
+      <Project>{6b5d3118-c655-41f6-8184-b812080b4a67}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Tokenizer\Tokenizer.vcxproj">
+      <Project>{de309093-d39e-49f1-baef-400b56c0c284}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\TypeTable.h\TypeTable.h.vcxproj">
+      <Project>{70840f22-ee69-4c5f-ac17-b0ad223797e0}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilities\Utilities.vcxproj">
+      <Project>{671ef0b6-6577-4605-b640-5a9c714bd9d0}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\XmlDocument\XmlDocument.vcxproj">
+      <Project>{5ca5459e-4d66-4f79-8732-f9095099826a}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

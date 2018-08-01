@@ -1,0 +1,13 @@
+﻿  Parser.cpp
+  ConfigureParser.cpp
+  ActionsAndRules.cpp
+  Utilities.cpp
+  Tokenizer.cpp
+  SemiExp.cpp
+  ScopeStack.cpp
+  Logger.cpp
+  GrammarHelpers.cpp
+  FileSystem.cpp
+  AbstractSyntax.cpp
+  Generating Code...
+  Parser.vcxproj -> C:\Users\Ringo\Documents\Visual Studio 2017\Projects\Oodp4\Oodp4\Debug\Parser.lib

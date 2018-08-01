@@ -1,0 +1,93 @@
+<!DOCTYPE html><html><head>
+<!-------------HTML Prologue------------!>
+<!---Published By: Akshay , 708 S Beech Street , Syracuse .--!>
+<!----------------------(315)-289-0056----------------------!>
+<!----Package Name:C:\Users\Ringo\Documents\Visual Studio 2017\Projects\Oodp4\Oodp4\ServerRepository\CategoryThree\\CppProperties.h-----!>
+<!-------Published on :09:05:2017 19:44:10-----!>
+<link rel=stylesheet type=text/css href="../Common/Stylesheet.css"/></head> <div class = indent><h4>Dependencies:</h4> </div></hr><pre>#pragma once
+/////////////////////////////////////////////////////////////////////
+// CppProperties.h - Defines read/write and read only properties   //
+//                                                                 //
+// Jim Fawcett, CSE687 - Object Oriented Design, Spring 2017       //
+/////////////////////////////////////////////////////////////////////
+//
+// Got the idea from discussion here (scroll down about halfway):
+// http://stackoverflow.com/questions/8368512/does-c11-have-c-style-properties
+// This implementation is quite different however.
+/*
+* - fixed bug in Property class by adding copy constructor that only
+*   copies data member value.  The default copy constructor copies
+*   all memebers including getter_ and setter_
+*/
+#include &lt;iostream&gt;
+#include &lt;functional&gt;
+#define _CRT_SECURE_NO_WARNINGS
+
+/////////////////////////////////////////////////////////////////////
+// Property&lt;T&gt; class provides encapsulated properties for C++
+// - getter and setter functions can be customized without changing
+//   the client interface for any class that uses Property&lt;T&gt;
+//
+template&lt;typename T&gt;
+class Property
+<details><summary>{</summary>
+public:
+	// initialize the property field
+
+	Property() : value(T()) {}
+	Property(const Property&lt;T&gt;& p) : value(p.value) {}  // added this fix
+	Property(const T& t) : value(t) {}
+	virtual ~Property() {}
+
+	// set the property field with assignment operator
+
+	virtual Property&lt;T&gt;& operator=(const T &t)
+<details><summary>	{</summary>
+		value = setter_(t);
+		//getter_ = [=]() { return value; }  // Ronak's solution
+		return *this;
+</details>	}
+	// get the property field with cast operator
+
+	virtual operator const T() const { return getter_(); }
+
+	// define methods to customize getter and setter behaviors
+
+	void setter(std::function&lt;T(const T&)&gt; sttr) { setter_ = sttr; }
+	void getter(std::function&lt;T(void)&gt; gttr) { getter_ = gttr; }
+	T getValue() { return value; }  // used by custom getters
+
+protected:
+	T value;  // property field
+
+			  // define default getter and setter behavior using lambdas
+
+	std::function&lt;T(const T&)&gt; setter_ = [](const T& t) { return t; };  // setter
+	std::function&lt;T()&gt; getter_ = [=]() { return value; };               // getter
+</details>};
+
+
+/////////////////////////////////////////////////////////////////////
+// Property&lt;const T&gt; class provides encapsulated properties for C++
+// - getter function can be customized without changing
+//   the client interface for any class that uses Property&lt;T&gt;
+// - no setter is provided since the class is used for const properties
+// - comments for this class would be same as above, and so are omitted
+//
+template&lt;typename T&gt;
+class Property&lt;const T&gt;
+<details><summary>{</summary>
+public:
+	Property() : value(T()) {}
+	Property(const Property&lt;T&gt;& p) : value(p.value) {}
+	Property(const T& t) : value(t) {}
+	virtual ~Property() {}
+	void getter(std::function&lt;T(void)&gt; gttr) { getter_ = gttr; }
+	virtual operator const T() const { return getter_(); }    // getter
+	T getValue() { return value; }                            // used by custom getters
+protected:
+	T value;
+	std::function&lt;T()&gt; getter_ = [=]() { return value; };     // default gettter
+</details>};
+
+</pre></body></html>

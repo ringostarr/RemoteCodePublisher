@@ -1,0 +1,7 @@
+﻿  XmlParser.cpp
+  XmlElementParts.cpp
+  XmlElement.cpp
+  XmlDocument.cpp
+  Tokenizer.cpp
+  Generating Code...
+  XmlDocument.vcxproj -> C:\Users\Ringo\Documents\Visual Studio 2017\Projects\Oodp4\Oodp4\Debug\XmlDocument.lib

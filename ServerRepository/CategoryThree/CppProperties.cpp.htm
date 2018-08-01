@@ -1,0 +1,118 @@
+<!DOCTYPE html><html><head>
+<!-------------HTML Prologue------------!>
+<!---Published By: Akshay , 708 S Beech Street , Syracuse .--!>
+<!----------------------(315)-289-0056----------------------!>
+<!----Package Name:C:\Users\Ringo\Documents\Visual Studio 2017\Projects\Oodp4\Oodp4\ServerRepository\CategoryThree\\CppProperties.cpp-----!>
+<!-------Published on :09:05:2017 19:44:11-----!>
+<link rel=stylesheet type=text/css href="../Common/Stylesheet.css"/></head> <div class = indent><h4>Dependencies:</h4><a href = "CppProperties.h.htm">CppProperties.h</a><br> </div></hr><pre>/////////////////////////////////////////////////////////////////////
+// CppProperties.cpp - Defines read/write and read only properties //
+//                                                                 //
+// Jim Fawcett, CSE687 - Object Oriented Design, Spring 2017       //
+/////////////////////////////////////////////////////////////////////
+#define _CRT_SECURE_NO_WARNINGS
+
+
+#include "CppProperties.h"
+#include &lt;string&gt;
+#include &lt;iostream&gt;
+
+class X
+<details><summary>{</summary>
+public:
+	Property&lt;std::string&gt; name;
+	Property&lt;double&gt; isMutable;
+	Property&lt;const double&gt; pi = 3.1415927;
+	Property&lt;const std::string&gt; constName = "a const name";
+</details>};
+
+/////////////////////////////////////////////////////////////////////
+// Z class:
+// - demonstrates how to customize getter and setter functions
+//   without changing public interface of Z.
+// - That is important because it means that should we decide,
+//   after a class was published, that we should control the
+//   way the property behaves, we won't break existing clients.
+
+/*----&lt; demo function for custom getter and setter &gt;---------------*/
+
+std::string toUpper(const std::string& str)
+<details><summary>{</summary>
+	std::string upperS = str;
+	for (auto& c : upperS)
+		c = toupper(c);
+	return upperS;
+</details>}
+
+class Z
+<details><summary>{</summary>
+public:
+	Z()
+<details><summary>	{</summary>
+		// return value of setter is assigned to Property value
+		name.setter(
+			[](const std::string& s) { return toUpper(s); }  // set all chars to upper case
+		);
+		// this also works:
+		// name.setter(toUpper);
+
+		// return value of getter is returned from cast to Property type
+		name.getter(
+<details><summary>			[=]() {</summary>
+			std::string s = name.getValue();
+			s[0] = tolower(s[0]);               // set first char to lower case
+			return s;
+</details>		}
+		);
+</details>	}
+	Property&lt;std::string&gt; name;
+</details>};
+
+/////////////////////////////////////////////////////////////////////
+// - We can also modify the behavior of the propert by overriding
+//   the property virtual functions.  That, however, modifies user
+//   interface.
+//
+class UpperCaseProperty : public Property&lt;std::string&gt;
+<details><summary>{</summary>
+public:
+	UpperCaseProperty(const std::string& s)
+<details><summary>	{</summary>
+		value = toUpper(s);
+</details>	}
+	virtual Property&lt;std::string&gt;& operator=(const std::string &s)
+<details><summary>	{</summary>
+		value = toUpper(s);
+		return *this;
+</details>	}
+</details>};
+
+class Y
+<details><summary>{</summary>
+public:
+	UpperCaseProperty name = "jim";
+</details>};
+
+int main()
+<details><summary>{</summary>
+	std::cout &lt;&lt; "\n  Demonstrate C++ Properties class";
+	std::cout &lt;&lt; "\n ==================================";
+
+
+	//x.constName = "a new name";  // fails to compile - that's good
+
+	std::cout &lt;&lt; "\n";
+	std::cout &lt;&lt; "\n  demonstrate overriding property \"getter\" function";
+	std::cout &lt;&lt; "\n ---------------------------------------------------";
+	Y y;
+	//std::cout &lt;&lt; "\n  y.name = " &lt;&lt; y.name;
+
+	std::cout &lt;&lt; "\n";
+	std::cout &lt;&lt; "\n  demonstrate providing custom getter and setter functions";
+	std::cout &lt;&lt; "\n ----------------------------------------------------------";
+	Z z;
+	z.name = "fawcett";
+	//std::cout &lt;&lt; "\n  z.name = " &lt;&lt; z.name;
+	std::cout &lt;&lt; "\n\n";
+</details>}
+
+</pre></body></html>

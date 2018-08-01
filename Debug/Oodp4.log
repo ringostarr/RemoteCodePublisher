@@ -1,0 +1,5 @@
+﻿  Window.cpp
+  .NETFramework,Version=v4.0.AssemblyAttributes.cpp
+  Window.obj : /DEBUG:FASTLINK is not supported when managed code is present; restarting link with /DEBUG:FULL
+  Oodp4.vcxproj -> C:\Users\Ringo\Documents\Visual Studio 2017\Projects\Oodp4\Oodp4\Debug\Oodp4.exe
+  Oodp4.vcxproj -> C:\Users\Ringo\Documents\Visual Studio 2017\Projects\Oodp4\Oodp4\Debug\Oodp4.pdb (Partial PDB)

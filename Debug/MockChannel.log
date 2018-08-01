@@ -1,0 +1,12 @@
+﻿  MockChannel.cpp
+  Utilities.cpp
+  Sockets.cpp
+  MsgClient.cpp
+  FileSystem.cpp
+  Logger.cpp
+  HttpMessage.cpp
+  Cpp11-BlockingQueue.cpp
+  Generating Code...
+     Creating library C:\Users\Ringo\Documents\Visual Studio 2017\Projects\Oodp4\Oodp4\Debug\MockChannel.lib and object C:\Users\Ringo\Documents\Visual Studio 2017\Projects\Oodp4\Oodp4\Debug\MockChannel.exp
+  MockChannel.vcxproj -> C:\Users\Ringo\Documents\Visual Studio 2017\Projects\Oodp4\Oodp4\Debug\MockChannel.dll
+  MockChannel.vcxproj -> C:\Users\Ringo\Documents\Visual Studio 2017\Projects\Oodp4\Oodp4\Debug\MockChannel.pdb (Partial PDB)
